@@ -7,7 +7,7 @@ from django.db import models
 
 class PlantSpecimen(models.Model):
     plant_date = models.DateTimeField()
-    plant_type = models.ForeignKey('PlantType')
+    plant_type = models.ForeignKey('PlantType', on_delete=models.SET_NULL, null=True)
     
 class PlantType(models.Model):
     pass
